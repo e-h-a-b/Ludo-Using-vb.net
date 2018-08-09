@@ -1,0 +1,16 @@
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\ludo.vbproj.ResolveComReference.cache
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\WindowsApplication1.Ludo.resources
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\ludo.vbproj.GenerateResource.Cache
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\bin\Debug\ludo.exe
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\bin\Debug\ludo.pdb
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\bin\Debug\ludo.xml
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\ludo.exe
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\ludo.xml
+C:\Users\Ihab-majdy\Desktop\ludo\ludo\obj\x86\Debug\ludo.pdb
+C:\Users\Ihab-majdy\Desktop\ludo\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\Ihab-majdy\Desktop\ludo\obj\x86\Debug\ludo.vbproj.ResolveComReference.cache
+C:\Users\Ihab-majdy\Desktop\ludo\obj\x86\Debug\ludo.exe
+C:\Users\Ihab-majdy\Desktop\ludo\obj\x86\Debug\ludo.xml
+C:\Users\Ihab-majdy\Desktop\ludo\obj\x86\Debug\ludo.pdb

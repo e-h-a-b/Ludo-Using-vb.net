@@ -1,4 +1,4 @@
-﻿Imports WMPLib
+Imports WMPLib
 Public Class Ludo
     Dim randomString, randomString1 As Integer
     Dim Player As New WindowsMediaPlayer
@@ -53,103 +53,123 @@ Public Class Ludo
         End If
     End Sub
     Function def1(ByVal chk As PictureBox)
-        Dim re
-
+        Dim re 
         If Label4.Text.Contains("red") Then chk.BackgroundImage = red.BackgroundImage
         If Label4.Text.Contains("blue") Then chk.BackgroundImage = blue.BackgroundImage
         If Label4.Text.Contains("green") Then chk.BackgroundImage = green.BackgroundImage
         If Label4.Text.Contains("yellow") Then chk.BackgroundImage = yellow.BackgroundImage
         Return re
     End Function
-    Sub defc(ByVal chk As PictureBox)
-        'chk.BackgroundImage = Nothing
-
-    End Sub
-    Sub checkend(ByVal st As Integer)
-        'If Label4.Text.Contains("red") Then
-        '    If cellvalue(1) >= 51 Then
-        '        cellvalue(1) = 1
-        '        Dim mins
-        '        mins = cellvalue(1) - 51
-
-        '    End If
-        'End If
-        'If Label4.Text.Contains("yellow") Then
-        '    If cellvalue(1) >= 12 Then
-        '        cellvalue(1) = 1
-        '    End If
-        'End If
-        'If Label4.Text.Contains("green") Then
-        '    If cellvalue(1) >= 25 Then
-        '        cellvalue(1) = 1
-        '    End If
-        'End If
-        'If Label4.Text.Contains("blue") Then
-        '    If cellvalue(1) >= 38 Then
-        '        cellvalue(1) = 1
-        '    End If
-        'End If
+    Dim mx1 As Boolean
+    Dim mx2 As Boolean
+    Dim mx3 As Boolean
+    Dim missgame = 0
+    Sub checkend(ByVal nm As Integer)
+        Dim c
+        If Label4.Text.Contains("red") And nm >= 51 Then 
+            c = nm - 51
+            cellvalue(0) = "R"
+            cellvalue(1) = c
+            If c > 6 Then
+                missgame = 1
+            Else
+                missgame = 0 : def2("R" & c)
+            End If
+        End If
+        If Label4.Text.Contains("yellow") Then 
+            If cellvalue(1) + randomString + randomString1 > 12 And mx1 = True Then
+                c = cellvalue(1) + randomString + randomString1 - 12
+                cellvalue(0) = "y"
+                If c > 6 Then
+                    missgame = 1
+                Else
+                    missgame = 0 : def2("y" & c)
+                End If
+            End If
+        End If
+        If Label4.Text.Contains("green") Then
+            If cellvalue(1) + randomString + randomString1 > 25 And mx2 = True Then
+                c = cellvalue(1) + randomString + randomString1 - 25
+                cellvalue(0) = "g"
+                If c > 6 Then
+                    missgame = 1
+                Else
+                    missgame = 0 : def2("g" & c)
+                End If
+            End If
+        End If
+        If Label4.Text.Contains("blue") Then
+            If cellvalue(1) + randomString + randomString1 > 38 And mx3 = True Then
+                c = cellvalue(1) + randomString + randomString1 - 38
+                cellvalue(0) = "b"
+                If c > 6 Then
+                    missgame = 1
+                Else
+                    missgame = 0 : def2("b" & c)
+                End If
+            End If
+        End If
     End Sub
     Function def2(ByVal chk As String)
         Dim re
-        If chk = "l1" Then re = def1(l1) : def1(l1) : defc(l1)
-        If chk = "l2" Then re = def1(l2) : def1(l2) : defc(l2)
-        If chk = "l3" Then re = def1(l3) : def1(l3) : defc(l3)
-        If chk = "l4" Then re = def1(l4) : def1(l4) : defc(l4)
-        If chk = "l5" Then re = def1(l5) : def1(l5) : defc(l5)
-        If chk = "l6" Then re = def1(l6) : def1(l6) : defc(l6)
-        If chk = "l7" Then re = def1(l7) : def1(l7) : defc(l7)
-        If chk = "l8" Then re = def1(l8) : def1(l8) : defc(l8)
+        If chk = "l1" Then re = def1(l1) : def1(l1)
+        If chk = "l2" Then re = def1(l2) : def1(l2)
+        If chk = "l3" Then re = def1(l3) : def1(l3)
+        If chk = "l4" Then re = def1(l4) : def1(l4)
+        If chk = "l5" Then re = def1(l5) : def1(l5)
+        If chk = "l6" Then re = def1(l6) : def1(l6)
+        If chk = "l7" Then re = def1(l7) : def1(l7)
+        If chk = "l8" Then re = def1(l8) : def1(l8)
 
-        If chk = "l9" Then re = def1(l9) : def1(l9) : defc(l9)
-        If chk = "l10" Then re = def1(l10) : def1(l10) : defc(l10)
-        If chk = "l11" Then re = def1(l11) : def1(l11) : defc(l11)
-        If chk = "l12" Then re = def1(l12) : def1(l12) : defc(l12)
-        If chk = "l13" Then re = def1(l13) : def1(l13) : defc(l13)
-        If chk = "l14" Then re = def1(l14) : def1(l14) : defc(l14)
-        If chk = "l15" Then re = def1(l15) : def1(l15) : defc(l15)
-        If chk = "l16" Then re = def1(l16) : def1(l16) : defc(l16)
+        If chk = "l9" Then re = def1(l9) : def1(l9)
+        If chk = "l10" Then re = def1(l10) : def1(l10)
+        If chk = "l11" Then re = def1(l11) : def1(l11)
+        If chk = "l12" Then re = def1(l12) : def1(l12)
+        If chk = "l13" Then re = def1(l13) : def1(l13)
+        If chk = "l14" Then re = def1(l14) : def1(l14)
+        If chk = "l15" Then re = def1(l15) : def1(l15)
+        If chk = "l16" Then re = def1(l16) : def1(l16)
 
-        If chk = "l17" Then re = def1(l17) : def1(l17) : defc(l17)
-        If chk = "l18" Then re = def1(l18) : def1(l18) : defc(l18)
-        If chk = "l19" Then re = def1(l19) : def1(l19) : defc(l19)
-        If chk = "l20" Then re = def1(l20) : def1(l20) : defc(l20)
-        If chk = "l21" Then re = def1(l21) : def1(l21) : defc(l21)
-        If chk = "l22" Then re = def1(l22) : def1(l22) : defc(l22)
-        If chk = "l23" Then re = def1(l23) : def1(l23) : defc(l23)
-        If chk = "l24" Then re = def1(l24) : def1(l24) : defc(l24)
+        If chk = "l17" Then re = def1(l17) : def1(l17)
+        If chk = "l18" Then re = def1(l18) : def1(l18)
+        If chk = "l19" Then re = def1(l19) : def1(l19)
+        If chk = "l20" Then re = def1(l20) : def1(l20)
+        If chk = "l21" Then re = def1(l21) : def1(l21)
+        If chk = "l22" Then re = def1(l22) : def1(l22)
+        If chk = "l23" Then re = def1(l23) : def1(l23)
+        If chk = "l24" Then re = def1(l24) : def1(l24)
 
-        If chk = "l25" Then re = def1(l25) : def1(l25) : defc(l25)
-        If chk = "l26" Then re = def1(l26) : def1(l26) : defc(l26)
-        If chk = "l27" Then re = def1(l27) : def1(l27) : defc(l27)
-        If chk = "l28" Then re = def1(l28) : def1(l28) : defc(l28)
-        If chk = "l29" Then re = def1(l29) : def1(l29) : defc(l29)
-        If chk = "l30" Then re = def1(l30) : def1(l30) : defc(l30)
-        If chk = "l31" Then re = def1(l31) : def1(l31) : defc(l31)
-        If chk = "l32" Then re = def1(l32) : def1(l32) : defc(l32)
+        If chk = "l25" Then re = def1(l25) : def1(l25)
+        If chk = "l26" Then re = def1(l26) : def1(l26)
+        If chk = "l27" Then re = def1(l27) : def1(l27)
+        If chk = "l28" Then re = def1(l28) : def1(l28)
+        If chk = "l29" Then re = def1(l29) : def1(l29)
+        If chk = "l30" Then re = def1(l30) : def1(l30)
+        If chk = "l31" Then re = def1(l31) : def1(l31)
+        If chk = "l32" Then re = def1(l32) : def1(l32)
 
-        If chk = "l33" Then re = def1(l33) : def1(l33) : defc(l33)
-        If chk = "l34" Then re = def1(l34) : def1(l34) : defc(l34)
-        If chk = "l35" Then re = def1(l35) : def1(l35) : defc(l35)
-        If chk = "l36" Then re = def1(l36) : def1(l36) : defc(l36)
-        If chk = "l37" Then re = def1(l37) : def1(l37) : defc(l37)
-        If chk = "l38" Then re = def1(l38) : def1(l38) : defc(l38)
-        If chk = "l39" Then re = def1(l39) : def1(l39) : defc(l39)
-        If chk = "l40" Then re = def1(l40) : def1(l40) : defc(l40)
+        If chk = "l33" Then re = def1(l33) : def1(l33)
+        If chk = "l34" Then re = def1(l34) : def1(l34)
+        If chk = "l35" Then re = def1(l35) : def1(l35)
+        If chk = "l36" Then re = def1(l36) : def1(l36)
+        If chk = "l37" Then re = def1(l37) : def1(l37)
+        If chk = "l38" Then re = def1(l38) : def1(l38)
+        If chk = "l39" Then re = def1(l39) : def1(l39)
+        If chk = "l40" Then re = def1(l40) : def1(l40)
 
-        If chk = "l41" Then re = def1(l41) : def1(l41) : defc(l41)
-        If chk = "l42" Then re = def1(l42) : def1(l42) : defc(l42)
-        If chk = "l43" Then re = def1(l43) : def1(l43) : defc(l43)
-        If chk = "l44" Then re = def1(l44) : def1(l44) : defc(l44)
-        If chk = "l45" Then re = def1(l45) : def1(l45) : defc(l45)
-        If chk = "l46" Then re = def1(l46) : def1(l46) : defc(l46)
-        If chk = "l47" Then re = def1(l47) : def1(l47) : defc(l47)
-        If chk = "l48" Then re = def1(l48) : def1(l48) : defc(l48)
+        If chk = "l41" Then re = def1(l41) : def1(l41)
+        If chk = "l42" Then re = def1(l42) : def1(l42)
+        If chk = "l43" Then re = def1(l43) : def1(l43)
+        If chk = "l44" Then re = def1(l44) : def1(l44)
+        If chk = "l45" Then re = def1(l45) : def1(l45)
+        If chk = "l46" Then re = def1(l46) : def1(l46)
+        If chk = "l47" Then re = def1(l47) : def1(l47)
+        If chk = "l48" Then re = def1(l48) : def1(l48)
 
-        If chk = "l49" Then re = def1(l49) : def1(l49) : defc(l49)
-        If chk = "l50" Then re = def1(l50) : def1(l50) : defc(l50)
-        If chk = "l51" Then re = def1(l51) : def1(l51) : defc(l51)
-        If chk = "l52" Then re = def1(l52) : def1(l52) : defc(l52)
+        If chk = "l49" Then re = def1(l49) : def1(l49)
+        If chk = "l50" Then re = def1(l50) : def1(l50)
+        If chk = "l51" Then re = def1(l51) : def1(l51)
+        If chk = "l52" Then re = def1(l52) : def1(l52)
 
         If chk = "R1" Then re = def1(R1) : def1(R1)
         If chk = "R2" Then re = def1(R2) : def1(R2)
@@ -182,17 +202,24 @@ Public Class Ludo
         'green  start= l27  End=l25
         'blue   start= l40  End=l38 
         makeparts(lastlocation)
-        ' TextBox1.Text = ""
-        reset()
-        ' If cellvalue(1) + randomString + randomString1 > 52 then 
-        checkend(cellvalue(1) + randomString + randomString1)
+        ' TextBox1.Text = "" 
+        reset() 
+        If cellvalue(1) + randomString + randomString1 >= 52 Then
 
-        If Label4.Text.Contains("red") Then str1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
-        If Label4.Text.Contains("yellow") Then sty1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
-        If Label4.Text.Contains("green") Then stg1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
-        If Label4.Text.Contains("blue") Then stb1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
+            If Label4.Text.Contains("yellow") Then mx1 = True
+            If Label4.Text.Contains("green") Then mx2 = True
+            If Label4.Text.Contains("blue") Then mx3 = True
+            cellvalue(1) = cellvalue(1) - 52
+        End If
+        If cellvalue(0).Contains("l") Then
+            checkend(cellvalue(1) + randomString + randomString1)
+        Else
 
-        : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
+        End If 
+        If Label4.Text.Contains("red") And missgame = 0 Then str1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
+        If Label4.Text.Contains("yellow") And missgame = 0 Then sty1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
+        If Label4.Text.Contains("green") And missgame = 0 Then stg1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
+        If Label4.Text.Contains("blue") And missgame = 0 Then stb1 = cellvalue(0) & cellvalue(1) + randomString + randomString1 : def2(cellvalue(0) & (cellvalue(1) + randomString + randomString1))
 
     End Sub
     Dim ty
@@ -203,7 +230,7 @@ Public Class Ludo
         Label4.Text = ListBox1.Items.Item(ty)
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Player.URL = "C:\Users\Ihab-majdy\Desktop\Chess\Chess\Resources\s.mp3"
+        Player.URL = "D:\stop wifi\Program vb.net\games\ludo\Resources\s.mp3"
         : Player.controls.play()
         ty += 1
         : Timer1.Start()
@@ -269,10 +296,10 @@ Public Class Ludo
       g1, g2, g3, g4, g5, _
       b1, b2, b3, b4, b5}
         For Each pic In pics
-            If pic.BackgroundImage Is red.BackgroundImage And Label4.Text.Contains("red") Then pic.BackgroundImage = Nothing
-            If pic.BackgroundImage Is blue.BackgroundImage And Label4.Text.Contains("blue") Then pic.BackgroundImage = Nothing
-            If pic.BackgroundImage Is green.BackgroundImage And Label4.Text.Contains("green") Then pic.BackgroundImage = Nothing
-            If pic.BackgroundImage Is yellow.BackgroundImage And Label4.Text.Contains("yellow") Then pic.BackgroundImage = Nothing
+            If pic.BackgroundImage Is red.BackgroundImage And Label4.Text.Contains("red") And missgame = 0 Then pic.BackgroundImage = Nothing
+            If pic.BackgroundImage Is blue.BackgroundImage And Label4.Text.Contains("blue") And missgame = 0 Then pic.BackgroundImage = Nothing
+            If pic.BackgroundImage Is green.BackgroundImage And Label4.Text.Contains("green") And missgame = 0 Then pic.BackgroundImage = Nothing
+            If pic.BackgroundImage Is yellow.BackgroundImage And Label4.Text.Contains("yellow") And missgame = 0 Then pic.BackgroundImage = Nothing
         Next
 
     End Sub
